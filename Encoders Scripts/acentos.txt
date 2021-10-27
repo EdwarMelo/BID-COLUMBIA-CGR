@@ -1,0 +1,27 @@
+Sub eliminaracentos()
+With Selection
+.Replace What:=Chr(225), Replacement:=Chr(97), LookAt:=xlPart, _
+SearchOrder:=xlByRows, MatchCase:=True ' á por a
+.Replace What:=Chr(233), Replacement:=Chr(101), LookAt:=xlPart, _
+SearchOrder:=xlByRows, MatchCase:=True ' é por e
+.Replace What:=Chr(237), Replacement:=Chr(105), LookAt:=xlPart, _
+SearchOrder:=xlByRows, MatchCase:=True ' í por i
+.Replace What:=Chr(243), Replacement:=Chr(111), LookAt:=xlPart, _
+SearchOrder:=xlByRows, MatchCase:=True ' ó por o
+.Replace What:=Chr(250), Replacement:=Chr(117), LookAt:=xlPart, _
+SearchOrder:=xlByRows, MatchCase:=True ' ú por u
+.Replace What:=Chr(193), Replacement:=Chr(65), LookAt:=xlPart, _
+SearchOrder:=xlByRows, MatchCase:=True ' Á por A
+.Replace What:=Chr(201), Replacement:=Chr(69), LookAt:=xlPart, _
+SearchOrder:=xlByRows, MatchCase:=True ' É por E
+.Replace What:=Chr(205), Replacement:=Chr(73), LookAt:=xlPart, _
+SearchOrder:=xlByRows, MatchCase:=True ' Í por I
+.Replace What:=Chr(211), Replacement:=Chr(79), LookAt:=xlPart, _
+SearchOrder:=xlByRows, MatchCase:=True ' Ó por O
+.Replace What:=Chr(218), Replacement:=Chr(85), LookAt:=xlPart, _
+SearchOrder:=xlByRows, MatchCase:=True ' Ú por U
+LookAt:=xlPart, _
+
+
+End With
+End Sub
