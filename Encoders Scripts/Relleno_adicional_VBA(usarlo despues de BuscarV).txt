@@ -1,0 +1,173 @@
+By: Cindy
+
+Este código (1) se ejecuta en VBA para, una vez hechos los matches con
+el output del codigo de R, rellenar las celdas faltantes.
+
+El codigo (2) Reproduce la columnas "Otras fechas mencionadas". Solo
+haría falta copiar como texto al output resultante y concatenarlo con
+" (denuncia)". Más detalles en la capacitacion.
+
+CODIGO 1
+
+Option Explicit
+
+
+Sub Tip()
+Dim SrchRng As Range, cel As Range
+Set SrchRng = Range("$R:$R")
+
+Range("M2:M600").Copy
+Range("R2:R600").PasteSpecial
+
+For Each cel In SrchRng
+    If InStr(1, cel.Value, "D PROVINCIAL") > 0 Then
+        cel.Offset(0, 1).Value = "Municipalidad Provincial"
+        
+    ElseIf InStr(1, cel.Value, "SERVICIO DE ADMINISTRACIÓN TRIBUTARIA DE LIMA") > 0 Then
+        cel.Offset(0, 1).Value = "Municipalidad Provincial"
+        
+    ElseIf InStr(1, cel.Value, "SERVICIO DE ADMINISTRACION TRIBUTARIA DE LIMA") > 0 Then
+        cel.Offset(0, 1).Value = "Municipalidad Provincial"
+        
+    ElseIf InStr(1, cel.Value, "SAT LIMA") > 0 Then
+        cel.Offset(0, 1).Value = "Municipalidad Provincial"
+        
+    ElseIf InStr(1, cel.Value, "D DISTRITAL") > 0 Then
+        cel.Offset(0, 1).Value = "Municipalidad Distrital"
+        
+    ElseIf InStr(1, cel.Value, "UNIVERSIDAD") > 0 Then
+        cel.Offset(0, 1).Value = "Institución Educativa"
+        
+        
+    ElseIf InStr(1, cel.Value, "BENEFICENCIA") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio de la Mujer y Poblaciones Vulnerables"
+                
+    ElseIf InStr(1, cel.Value, "POLICÍA") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio del Interior"
+        
+    ElseIf InStr(1, cel.Value, "FUERZAS ARMADAS") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio del Interior"
+        
+    ElseIf InStr(1, cel.Value, "EJÉRCITO") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio del Interior"
+
+    ElseIf InStr(1, cel.Value, "DIRECCIÓN REGIONAL DE SALUD LORETO") > 0 Then
+        cel.Offset(0, 1).Value = "Gobierno Regional"
+        
+    ElseIf InStr(1, cel.Value, "REGIONAL DE EDUCA") > 0 Then
+        cel.Offset(0, 1).Value = "DRE"
+        
+    ElseIf InStr(1, cel.Value, "CONCYTEC") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio de Educación"
+        
+    ElseIf InStr(1, cel.Value, "ASAMBLEA NACIONAL DE RECTORES") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio de Educación"
+        
+    ElseIf InStr(1, cel.Value, "MINISTERIO DEL INTERIOR") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio del Interior"
+        
+    ElseIf InStr(1, cel.Value, "MARINA DE GUE") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio del Interior"
+    
+    ElseIf InStr(1, cel.Value, "INPE") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio del Interior"
+    
+    ElseIf InStr(1, cel.Value, "INSTITUTO NACIONAL PENITENCIARIO") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio del Interior"
+        
+    ElseIf InStr(1, cel.Value, "HOSPITAL REGIONAL DE HUACHO HUAURA") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio de Salud"
+        cel.Offset(0, 2).Value = "Lima"
+        cel.Offset(0, 3).Value = "Huaura"
+        cel.Offset(0, 3).Value = "Huacho"
+        
+       
+    ElseIf InStr(1, cel.Value, "SUNARP") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio de Justicia y Derechos Humanos"
+        
+    ElseIf InStr(1, cel.Value, "INEN") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio de Salud"
+       
+    ElseIf InStr(1, cel.Value, "COFOPRI") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio de Vivienda, Construcción y Saneamiento"
+
+    ElseIf InStr(1, cel.Value, "FONDO MIV") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio de Vivienda, Construcción y Saneamiento"
+ 
+    ElseIf InStr(1, cel.Value, "PRONIED") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio de Educación"
+        
+    ElseIf InStr(1, cel.Value, "UNIDAD DE GEST") > 0 Then
+        cel.Offset(0, 1).Value = "UGEL"
+        
+    ElseIf InStr(1, cel.Value, "UGEL") > 0 Then
+        cel.Offset(0, 1).Value = "UGEL"
+        
+    ElseIf InStr(1, cel.Value, "JUNTOS") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio de Desarrollo e Inclusión Social"
+        
+    ElseIf InStr(1, cel.Value, "MUNICIPALIDAD METROPOLITANA") > 0 Then
+        cel.Offset(0, 1).Value = "Municipalidad Provincial"
+        
+    ElseIf InStr(1, cel.Value, "TRABAJA PER") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio de Trabajo y Promoción del Empleo"
+        
+    ElseIf InStr(1, cel.Value, "ENFERMEDADES NEOP") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio de Salud"
+        
+    ElseIf InStr(1, cel.Value, "DIRECCIÓN DE REDES INTEGRADAS DE SALUD LIMA") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio de Salud"
+        
+    ElseIf InStr(1, cel.Value, "HOSPITAL DE ENFERMEDADES PEDIÁTRICAS") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio de Salud"
+        
+    ElseIf InStr(1, cel.Value, "EMPRESA PRESTAD") > 0 Then
+        cel.Offset(0, 1).Value = "Empresa estatal"
+
+    ElseIf InStr(1, cel.Value, "GOB. REG.") > 0 Then
+        cel.Offset(0, 1).Value = "Gobierno Regional"
+        
+    ElseIf InStr(1, cel.Value, "DIRECCIÓN SUBREGIONAL DE SALUD II CHOTA") > 0 Then
+        cel.Offset(0, 1).Value = "Gobierno Regional"
+        
+    ElseIf InStr(1, cel.Value, "GOBIERNO REGIONAL") > 0 Then
+        cel.Offset(0, 1).Value = "Gobierno Regional"
+
+    ElseIf InStr(1, cel.Value, "MANCOMUNIDAD") > 0 Then
+        cel.Offset(0, 1).Value = "Mancomunidad"
+        
+    ElseIf InStr(1, cel.Value, "JNE") > 0 Then
+        cel.Offset(0, 1).Value = "Institución Autónoma"
+        
+    ElseIf InStr(1, cel.Value, "ONPE") > 0 Then
+        cel.Offset(0, 1).Value = "Institución Autónoma"
+        
+    ElseIf InStr(1, cel.Value, "SERVICIO NACIONAL FORESTAL Y DE FAUNA") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio de Agricultura y Riego"
+        
+    ElseIf InStr(1, cel.Value, "SERFOR") > 0 Then
+        cel.Offset(0, 1).Value = "Ministerio de Agricultura y Riego"
+
+
+        
+        
+    End If
+Next cel
+
+End Sub
+
+
+CODIGO 2
+
+Sub Fecha()
+Dim Ran As Range, celda As Range, n As Integer
+Set Ran = Range("$AJ2:$AJ650")
+Range("C2:C650").Copy
+Range("AJ2:AJ650").PasteSpecial
+
+n = Ran.Rows.Count
+Ran.NumberFormat = "[$-es-PE]d"" de ""mmmm"" de ""yyyy;@"
+
+End Sub
+
+
